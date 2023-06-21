@@ -49,7 +49,7 @@ export default function Lista() {
       </div>
       <hr/>
       <div className="containerLista">
-        <h2 className="title">Feedbacks Cadastrados</h2>
+        {/* <h2 className="title">Feedbacks Cadastrados</h2> */}
         <div className="lista">
             <ul>
               {feedbacksFiltrados.map((feedback, index) => (

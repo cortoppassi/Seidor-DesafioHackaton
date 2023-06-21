@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import StarRating from './StarRating';
 import { FeedbackContext } from '../FeedbackContext';
+import InputMask from 'react-input-mask';
+
 import './feedback.css';
 
 export default function Main() {
@@ -66,6 +68,9 @@ export default function Main() {
   return (
     <div className="feedback">
       <div className="buttonMain">
+        {/* <Link to="/">
+          <img src="https://nerdin.com.br/img/empresa/2422.png" style={{ width: '10%'}} />
+        </Link> */}
         <Link to="/lista" className="submit-button" > Meus Feedbacks </Link>
       </div>
       <div className="formularioFeedback">
@@ -79,7 +84,7 @@ export default function Main() {
             <label>Departamento:</label>
             <input type="text" name="departamento" required />
             <label>Data do Feedback:</label>
-            <input type="date" name="dataFeedback" required />
+            <InputMask mask="99/99/9999" name="dataFeedback" required />
             <label>Tipo de Feedback:</label>
             <select name="tipoFeedback" value={tipoFeedback} onChange={handleTipoFeedbackChange} required>
               <option value="">Selecione...</option>

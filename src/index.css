@@ -46,7 +46,7 @@ textarea {
   margin-bottom: 10px;
 }
 
-input[type="date"] {
+input:not([type="range"]):not([type="color"]) {
   width: 100%;
   padding: 10px;
   border: none;
