@@ -1,7 +1,85 @@
 html, body {
+  background: linear-gradient(to right, #000000, #2e2e2e);
   height: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
+.submit-button {
+  background-color: transparent;
+  color:  #999999;
+  border: solid 1px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.submit-button:hover {
+  color: #ffffff;
+}
+
+h2 {
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  font-weight: lighter;
+}
+h3 {
+  padding: 10px;
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  font-weight: lighter;
+}
+
+a {
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+}
+
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+select option[value=""] {
+  color: #999999;
+}
+
+select option:first-child {
+  color: #999999;
+}
+
+input[type="radio"][value="positivo"] {
+  color: #00cc00;
+}
+
+input[type="radio"][value="negativo"] {
+  color: #cc0000;
+}

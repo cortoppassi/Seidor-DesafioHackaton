@@ -1,0 +1,39 @@
+img {
+    width: 35%;
+    height: 20%;
+    margin: 0 auto;
+    display: block;
+}
+
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.logo {
+    margin-bottom: 20px;
+}
+
+.title {
+    text-align: center;
+    margin: 5% 10%;
+    flex: 1;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+}
+.home p {
+    font-family: Arial, sans-serif;
+    font-weight: lighter;
+    font-size: 17px;
+    line-height: bolder;
+    color: #999999;
+    margin-bottom: 20px;
+}

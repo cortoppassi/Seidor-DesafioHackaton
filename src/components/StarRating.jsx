@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
+import './starRating.css';
 
-function StarRating() {
-  const [rating, setRating] = useState(0);
+function StarRating({ rating, onRatingChange }) {
 
   const handleRatingClick = (selectedRating) => {
-    setRating(selectedRating);
+    onRatingChange(selectedRating);
   };
 
   return (
     <div>
-      
       <div>
         {[1, 2, 3, 4, 5].map((star) => (
           <span
@@ -20,11 +19,11 @@ function StarRating() {
             ★
           </span>
         ))}
-        <p>{rating}/5</p>
       </div>
     </div>
   );
 }
 
 export default StarRating;
+
 
