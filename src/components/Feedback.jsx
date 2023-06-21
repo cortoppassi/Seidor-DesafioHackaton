@@ -1,11 +1,12 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import StarRating from './StarRating';
-import Lista from "./Lista";
-import  './main.css';
+import { FeedbackContext } from '../FeedbackContext';
+import './feedback.css';
 
 export default function Main() {
-  const [feedbacks, setFeedbacks] = useState([]);
+  const { feedbacks, addFeedback } = useContext(FeedbackContext);
+  
   const [tipoFeedback, setTipoFeedback] = useState('');
   const [tecnicasVisivel, setTecnicasVisivel] = useState(false);
   const [comportamentaisVisivel, setComportamentaisVisivel] = useState(false);
@@ -40,7 +41,7 @@ export default function Main() {
       trabalhoEquipe,
     };
 
-    setFeedbacks([...feedbacks, newFeedback]);
+    addFeedback(newFeedback);
 
 
     event.target.reset();
@@ -64,11 +65,7 @@ export default function Main() {
 
   return (
     <div className="feedback">
-      
-      {/* <ListaFeedback feedbacks={feedbacks} /> */}
-
       <div className="buttonMain">
-        {/* <img src="https://nerdin.com.br/img/empresa/2422.png" alt="" /> */}
         <Link to="/lista" className="submit-button" > Meus Feedbacks </Link>
       </div>
       <div className="formularioFeedback">
@@ -94,7 +91,7 @@ export default function Main() {
               placeholder="Digite aqui seu feedback... Utilize suas palavras de forma cuidadosa e respeitosa, oferecendo sugestões valiosas para o aperfeiçoamento mútuo." rows="4" cols="20">
             </textarea>
 
-            <button type="submit" className="submit-button" onClick={console.log(feedbacks)}> Enviar Feedback </button>
+            <button type="submit" className="submit-button" onClick={console.log(feedbacks)}>Enviar Feedback</button>
              
           </form>
 

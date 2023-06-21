@@ -52,6 +52,8 @@
     font-weight: lighter;
     color: #ffff;
   }
+
+  
   
   @media (max-width: 600px) {
     .formularioFeedback {

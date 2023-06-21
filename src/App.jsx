@@ -1,20 +1,24 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Home from './components/Home';
-import Main from './components/Main';
+import Main from './components/Feedback';
 import Lista from './components/Lista';
+import { FeedbackProvider } from './FeedbackContext';
 
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/feedback" element={<Main />} />
-        <Route path="/lista" element={<Lista />} />
-      </Routes>
+      <FeedbackProvider>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/feedback" element={<Main />} />
+          <Route path="/lista" element={<Lista />} />
+        </Routes>
+      </FeedbackProvider>
     </Router>
   );
 }
 
 export default App;
+
