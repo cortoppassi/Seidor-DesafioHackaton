@@ -16,8 +16,8 @@
   background-color: transparent;
   color:  #0000cd;
   border: solid 1px;
-  padding: 10px 20px;
-  font-size: 20px;
+  padding: 5px 20px;
+  /* font-size: 17px; */
   cursor: pointer;
   margin: 5px;
 }
@@ -38,6 +38,7 @@
 }
 
 #btn-feedback {
+  font-size: 17px;
   color: #808080;
   z-index: 9999;
 }

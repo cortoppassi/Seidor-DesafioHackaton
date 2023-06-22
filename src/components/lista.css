@@ -5,6 +5,27 @@
   padding: 20px;
   background-color: #f2f2f2;
   height: 8vh;
+  
+}
+.lista {
+  
+  max-height: 85vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.lista::-webkit-scrollbar {
+  width: 5px;
+}
+.lista::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.lista::-webkit-scrollbar-thumb {
+  background: #555;
+  
+}
+.lista::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 .logo{
@@ -19,28 +40,28 @@ ul {
 }
 
 li {
-  width: 30%;
+  /* width: 25%; */
   list-style-type: none;
   background-color: #f2f2f2;
-  margin: 1%;
+  margin: 2vh;
   border-radius: 3px;
   color: #111111;
   cursor: pointer;
   line-height: 0;
-}
-
-li:hover {
- color: #000;
+  padding: 5px 20px;
 }
 
 .botoes {
+  padding: 1px 15px;
   background-color: transparent;
   border: solid 1px;
   border-radius: 3px;
-  font-size: 20px;
+  font-size: 15px;
   cursor: pointer;
   margin: 5px;
 }
+
+
 
 .botoes:hover {
   animation: blink 1s infinite;
@@ -55,13 +76,9 @@ li:hover {
   }
 }
 
-
-
 #inputTxt {
+  color:  #0000cd;
   width: 50%;
   border: solid 1px;
-  color:  #0000cd;
-}
-#inputTxt:hover {
-  color: #00008b;
+  padding: 5px 20px;
 }

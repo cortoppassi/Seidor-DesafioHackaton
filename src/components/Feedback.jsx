@@ -99,7 +99,7 @@ export default function Main() {
             </textarea>
 
             <button to="/lista" type="submit" className="submit-button" id='btn-feedback'
-              onClick={console.log(feedbacks)}>Enviar Feedback
+              onClick={console.log(feedbacks)}><Link to="/lista"> Enviar Feedback</Link>
             </button>
             
           </form>
