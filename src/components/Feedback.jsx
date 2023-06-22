@@ -67,17 +67,19 @@ export default function Main() {
 
   return (
     <div className="feedback">
-      <div className="buttonMain">
-        {/* <Link to="/">
-          <img src="https://nerdin.com.br/img/empresa/2422.png" style={{ width: '10%'}} />
-        </Link> */}
-        <Link to="/lista" className="submit-button" > Meus Feedbacks </Link>
+      <div className='container'>
+        <div className='logo'>
+        <Link to="/">
+          <img src="https://nerdin.com.br/img/empresa/2422.png"/>
+        </Link>
+        </div>
+        <div className="btn-cabecalho">
+          <Link to="/lista" className="submit-button" > Meus Feedbacks </Link>
+        </div>
       </div>
       <div className="formularioFeedback">
 
         <div className="formulario">
-
-          <h2>Avaliação de desempenho</h2>
           <form onSubmit={handleSubmit}>
             <label>Nome do Funcionário:</label>
             <input type="text" name="nomeFuncionario" required />
@@ -96,8 +98,10 @@ export default function Main() {
               placeholder="Digite aqui seu feedback... Utilize suas palavras de forma cuidadosa e respeitosa, oferecendo sugestões valiosas para o aperfeiçoamento mútuo." rows="4" cols="20">
             </textarea>
 
-            <button type="submit" className="submit-button" onClick={console.log(feedbacks)}>Enviar Feedback</button>
-             
+            <button to="/lista" type="submit" className="submit-button" id='btn-feedback'
+              onClick={console.log(feedbacks)}>Enviar Feedback
+            </button>
+            
           </form>
 
         </div>
@@ -107,17 +111,17 @@ export default function Main() {
             <h2>Competências Técnicas</h2>
             <h3>Por favor, avalie o cumprimento destes requisitos em uma escala de 1 a 5, onde 1 representa um cumprimento insatisfatório e 5 representa um cumprimento excepcional.</h3>
             <div>
-              <p>
+              <h4>
                 Solução de problemas: Examina dados para compreender questões, tirar conclusões e resolver problemas.
-              </p>
+              </h4>
               <StarRating rating={solucaoProblemas} onRatingChange={setSolucaoProblemas} />
-              <p>
+              <h4>
                 Atenção aos detalhes: Atende com diligência os detalhes e busca a qualidade na execução das tarefas.
-              </p>
+              </h4>
               <StarRating rating={atencaoDetalhes} onRatingChange={setAtencaoDetalhes} />
-              <p>
+              <h4>
               Análise/Raciocínio: Examina dados para compreender questões, tirar conclusões e resolver problemas.
-              </p>
+              </h4>
               <StarRating rating={analiseRaciocinio} onRatingChange={setAnaliseRaciocinio} />
             </div>
           </>
@@ -127,17 +131,17 @@ export default function Main() {
             <h2>Competências Comportamentais</h2>
             <h3>Por favor, avalie o cumprimento destes requisitos em uma escala de 1 a 5, onde 1 representa um cumprimento insatisfatório e 5 representa um cumprimento excepcional.</h3>
             <div>
-              <p>
+              <h4>
                 Responsabilidade e confiabilidade: Assume responsabilidade pessoal pela qualidade e pontualidade do trabalho e alcança resultados com pouca supervisão.
-              </p>
+              </h4>
                 <StarRating rating={responsabilidadeConfiabilidade} onRatingChange={setResponsabilidadeConfiabilidade} />
-              <p>
+              <h4>
                 Adaptabilidade e Flexibilidade: Se adapta às necessidades, condições e responsabilidades do trabalho em constante mudança.
-              </p>
+              </h4>
                 <StarRating rating={adaptabilidadeFlexibilidade} onRatingChange={setAdaptabilidadeFlexibilidade} />
-              <p>
+              <h4>
                 Trabalho em equipe: Promove a cooperação e o comprometimento dentro de uma equipe para atingir metas e resultados.
-              </p>
+              </h4>
               <StarRating rating={trabalhoEquipe} onRatingChange={setTrabalhoEquipe} />
             </div>
           </>

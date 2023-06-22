@@ -1,3 +1,17 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  height: 8vh;
+}
+
+.logo{
+  width: 90vh;
+  margin: 2px;
+}
+
 ul {
   display: flex;
   flex-wrap: wrap;
@@ -5,56 +19,49 @@ ul {
 }
 
 li {
-  list-style-type: none;
-  color: white;
-  border: solid 1px;
   width: 30%;
-  height: 60vh;
-  margin: 20px;
+  list-style-type: none;
+  background-color: #f2f2f2;
+  margin: 1%;
   border-radius: 3px;
-  color: #999999;
-  font-size: 20px;
+  color: #111111;
   cursor: pointer;
+  line-height: 0;
 }
 
 li:hover {
- color: #ffff;
+ color: #000;
 }
 
-h2.title {
-  margin: 10px;
+.botoes {
+  background-color: transparent;
+  border: solid 1px;
+  border-radius: 3px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 5px;
 }
 
-.containerLista {
-  overflow: auto;
+.botoes:hover {
+  animation: blink 1s infinite;
 }
 
-.lista {
-  display: flex;
-  width: 100%;
-  height: 100vh;
+@keyframes blink {
+  0%, 50%, 100% {
+    opacity: 1;
+  }
+  25%, 75% {
+    opacity: 0;
+  }
 }
 
-.container {
-  position: relative;
-  
-}
 
-.input-container {
-  display: grid;
-  grid-template-columns: 33% 50% 20%;
-  align-items: center;
-}
-
-.input-field {
-  margin-right: 10px;
-  width: 10%;
-}
-
-.submit-button {
-  
-}
 
 #inputTxt {
   width: 50%;
+  border: solid 1px;
+  color:  #0000cd;
+}
+#inputTxt:hover {
+  color: #00008b;
 }

@@ -1,59 +1,69 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  height: 8vh;
+}
+
+.logo{
+  width: 90vh;
+  margin: 2px;
+}
+
+.submit-button {
+  background-color: transparent;
+  color:  #0000cd;
+  border: solid 1px;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.submit-button:hover {
+  color: #00008b;
+}
+
 .feedback {
   display: flex;
   flex-direction: column;
   color: #ffff;
 }
 
-
 .formularioFeedback {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
+  margin: 3%;
+}
+
+#btn-feedback {
+  color: #808080;
+  z-index: 9999;
+}
+
+
+#btn-feedback:hover {
+  color: #f2f2f2;
 }
 
 .formulario {
-  position: fixed;
-  top: 50%;
-  left: 20%;
-  transform: translate(-40%, -40%);
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
 }
 
 .questionario {
-  position: fixed;
-  top: 50%;
-  left: 60%;
-  transform: translate(-40%, -40%);
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
 }
 
-
-  p {
-    padding: 5px;
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-    font-weight: lighter;
-   
-  }
-
-  h2 {
-    padding: 10px;
-    font-family: Arial, sans-serif;
-    font-size: 24px;
-    color: #ffff;
-    font-weight: lighter;
-  }
-
-  h3 {
-    padding: 10px;
-    font-family: Arial, sans-serif;
-    font-size: 17px;
-    font-weight: lighter;
-    color: #ffff;
-  }
-
-  
+label {
+  font-size: 20px;
+}
   
   @media (max-width: 600px) {
     .formularioFeedback {

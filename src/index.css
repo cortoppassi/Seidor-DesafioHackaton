@@ -6,30 +6,32 @@ html, body {
   overflow: hidden;
 }
 
-.submit-button {
-  background-color: transparent;
-  color:  #999999;
-  border: solid 1px;
-  padding: 10px 20px;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-.submit-button:hover {
-  color: #ffffff;
-}
-
 h2 {
   padding: 10px;
   font-family: Arial, sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: lighter;
+  color: #f2f2f2;
 }
 h3 {
   padding: 10px;
   font-family: Arial, sans-serif;
+  font-size: 18px;
+  font-weight: lighter;
+  color: #f2f2f2;
+}
+h4 {
+  
+  font-family: Arial, sans-serif;
   font-size: 17px;
   font-weight: lighter;
+  color: #f2f2f2;
+}
+h5 {
+  font-family: Arial, sans-serif;
+  font-size: 17px;
+  font-weight: lighter;
+  
 }
 
 a {

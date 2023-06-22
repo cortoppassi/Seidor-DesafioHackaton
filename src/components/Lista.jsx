@@ -22,12 +22,14 @@ export default function Lista() {
   const feedbacksFiltrados = feedbacks.filter(filtrarFeedbacks);
 
   return (
-    <div className="container">
-      <div className="input-container">
-        <Link to="/">
-          <img src="https://nerdin.com.br/img/empresa/2422.png" style={{ width: '30%'}} />
-        </Link>
-        <div>
+    <div className="listaDeFeedBack">
+      <div className= "container">
+        <div className="logo">
+          <Link to="/">
+            <img src="https://nerdin.com.br/img/empresa/2422.png" alt="Logo" />
+          </Link>
+        </div>  
+        <div className="">
           <input
             type="text"
             name="filtro"
@@ -47,30 +49,30 @@ export default function Lista() {
           </Link>
         </div>
       </div>
-      <hr/>
       <div className="containerLista">
-        {/* <h2 className="title">Feedbacks Cadastrados</h2> */}
         <div className="lista">
-            <ul>
-              {feedbacksFiltrados.map((feedback, index) => (
-                <li key={index}>
-                  <p>Nome do Funcionário: {feedback.nomeFuncionario}</p>
-                  <p>Departamento: {feedback.departamento}</p>
-                  <p>Data do Feedback: {feedback.dataFeedback}</p>
-                  <p>Tipo de Feedback: {feedback.descricao}</p>
-                  <p>Solução de problemas: {feedback.solucaoProblemas}</p>
-                  <p>Atenção aos detalhes: {feedback.atencaoDetalhes}</p>
-                  <p>Análise/Raciocínio: {feedback.analiseRaciocinio}</p>
-                  <p>Responsabilidade e confiabilidade: {feedback.responsabilidadeConfiabilidade}</p>
-                  <p>Adaptabilidade e Flexibilidade: {feedback.adaptabilidadeFlexibilidade}</p>
-                  <p>Trabalho em equipe: {feedback.trabalhoEquipe}</p>
-                </li>
-              ))}
-            </ul>
+          <ul>
+            {feedbacksFiltrados.map((feedback, index) => (
+              <li key={index}>
+                <h5>Nome do Funcionário: {feedback.nomeFuncionario}</h5>
+                <h5>Departamento: {feedback.departamento}</h5>
+                <h5>Data do Feedback: {feedback.dataFeedback}</h5>
+                <h5>Descrição: {feedback.descricao}</h5>
+                <h5>Solução de problemas: {feedback.solucaoProblemas}</h5>
+                <h5>Atenção aos detalhes: {feedback.atencaoDetalhes}</h5>
+                <h5>Análise/Raciocínio: {feedback.analiseRaciocinio}</h5>
+                <h5>Responsabilidade e confiabilidade: {feedback.responsabilidadeConfiabilidade}</h5>
+                <h5>Adaptabilidade e Flexibilidade: {feedback.adaptabilidadeFlexibilidade}</h5>
+                <h5>Trabalho em equipe: {feedback.trabalhoEquipe}</h5>
+                <div>
+                  <button onClick={() => handleEditarFeedback(feedback)} className="botoes">Editar</button>
+                  <button onClick={() => handleExcluirFeedback(feedback)} className="botoes">Excluir</button>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
-        
       </div>
     </div>
   );
 }
-
