@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import StarRating from './StarRating';
 import { FeedbackContext } from '../FeedbackContext';
 import InputMask from 'react-input-mask';
@@ -8,7 +8,8 @@ import './feedback.css';
 
 export default function Main() {
   const { feedbacks, addFeedback } = useContext(FeedbackContext);
-  
+  const navigate = useNavigate();
+
   const [tipoFeedback, setTipoFeedback] = useState('');
   const [tecnicasVisivel, setTecnicasVisivel] = useState(false);
   const [comportamentaisVisivel, setComportamentaisVisivel] = useState(false);
@@ -56,6 +57,8 @@ export default function Main() {
     setResponsabilidadeConfiabilidade(0);
     setAdaptabilidadeFlexibilidade(0);
     setTrabalhoEquipe(0);
+
+    navigate('/lista');
   };
 
   const handleTipoFeedbackChange = (event) => {
@@ -98,9 +101,8 @@ export default function Main() {
               placeholder="Digite aqui seu feedback... Utilize suas palavras de forma cuidadosa e respeitosa, oferecendo sugestões valiosas para o aperfeiçoamento mútuo." rows="4" cols="20">
             </textarea>
 
-            <button to="/lista" type="submit" className="submit-button" id='btn-feedback'
-              onClick={console.log(feedbacks)}><Link to="/lista"> Enviar Feedback</Link>
-            </button>
+            <button type="submit" className="submit-button" id='btn-feedback'>Enviar Feedback</button>
+            
             
           </form>
 

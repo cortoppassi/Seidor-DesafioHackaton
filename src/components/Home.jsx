@@ -20,7 +20,7 @@ const Home = () => {
         </div>
       </div>
       <div className="title">
-          <h2>Bem-vindo à Avaliação de Desempenho!</h2>
+          <h1>Bem-vindo à Avaliação de Desempenho!</h1>
           <br/>
           <p>
           Esta é uma oportunidade para refletir sobre o desempenho e as competências de nossos colaboradores, reconhecendo suas realizações e identificando áreas para crescimento e desenvolvimento. Durante a avaliação, serão exploradas diferentes áreas de competência, como habilidades técnicas, comportamentais e outros aspectos relevantes para o desempenho em nossa organização. Sua participação ativa e honesta é fundamental para uma avaliação significativa e eficaz.

@@ -5,13 +5,20 @@
   padding: 20px;
   background-color: #f2f2f2;
   height: 8vh;
-  
 }
-.lista {
-  
+.containerLista {
+  width: 50%;
   max-height: 85vh;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.item-feedback {
+  color: #000 !important;
+}
+
+.item-feedback p {
+  margin: 2px;
 }
 
 .lista::-webkit-scrollbar {
@@ -22,32 +29,31 @@
 }
 .lista::-webkit-scrollbar-thumb {
   background: #555;
-  
 }
 .lista::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 
-.logo{
+.logo {
   width: 90vh;
   margin: 2px;
 }
 
 ul {
+  width: 25%;
   display: flex;
   flex-wrap: wrap;
   width: 100%;
 }
 
 li {
-  /* width: 25%; */
   list-style-type: none;
   background-color: #f2f2f2;
   margin: 2vh;
   border-radius: 3px;
   color: #111111;
   cursor: pointer;
-  line-height: 0;
+  line-height: 2;
   padding: 5px 20px;
 }
 
@@ -61,23 +67,24 @@ li {
   margin: 5px;
 }
 
-
-
 .botoes:hover {
   animation: blink 1s infinite;
 }
 
 @keyframes blink {
-  0%, 50%, 100% {
+  0%,
+  50%,
+  100% {
     opacity: 1;
   }
-  25%, 75% {
+  25%,
+  75% {
     opacity: 0;
   }
 }
 
 #inputTxt {
-  color:  #0000cd;
+  color: #0000cd;
   width: 50%;
   border: solid 1px;
   padding: 5px 20px;
