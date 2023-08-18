@@ -1,19 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import StarRating from './StarRating';
-import { FeedbackContext } from '../FeedbackContext';
 import InputMask from 'react-input-mask';
 
 import './feedback.css';
 
 export default function Main() {
-  const { feedbacks, addFeedback } = useContext(FeedbackContext);
   const navigate = useNavigate();
 
   const [tipoFeedback, setTipoFeedback] = useState('');
   const [tecnicasVisivel, setTecnicasVisivel] = useState(false);
   const [comportamentaisVisivel, setComportamentaisVisivel] = useState(false);
-
   const [solucaoProblemas, setSolucaoProblemas] = useState(0);
   const [atencaoDetalhes, setAtencaoDetalhes] = useState(0);
   const [analiseRaciocinio, setAnaliseRaciocinio] = useState(0);
@@ -29,7 +26,6 @@ export default function Main() {
     const dataFeedback = event.target.dataFeedback.value;
     const descricao = event.target.descricao.value;
 
-
     const newFeedback = {
       nomeFuncionario,
       departamento,
@@ -43,9 +39,8 @@ export default function Main() {
       adaptabilidadeFlexibilidade,
       trabalhoEquipe,
     };
-
-    addFeedback(newFeedback);
-
+    
+    localStorage.setItem('feedback', JSON.stringify(newFeedback));
 
     event.target.reset();
     setTipoFeedback('');
@@ -102,54 +97,51 @@ export default function Main() {
             </textarea>
 
             <button type="submit" className="submit-button" id='btn-feedback'>Enviar Feedback</button>
-            
-            
           </form>
+        </div>
 
-        </div>
         <div className="questionario">
-        {tecnicasVisivel && (
-          <>
-            <h2>Competências Técnicas</h2>
-            <h3>Por favor, avalie o cumprimento destes requisitos em uma escala de 1 a 5, onde 1 representa um cumprimento insatisfatório e 5 representa um cumprimento excepcional.</h3>
-            <div>
-              <h4>
-                Solução de problemas: Examina dados para compreender questões, tirar conclusões e resolver problemas.
-              </h4>
-              <StarRating rating={solucaoProblemas} onRatingChange={setSolucaoProblemas} />
-              <h4>
-                Atenção aos detalhes: Atende com diligência os detalhes e busca a qualidade na execução das tarefas.
-              </h4>
-              <StarRating rating={atencaoDetalhes} onRatingChange={setAtencaoDetalhes} />
-              <h4>
-              Análise/Raciocínio: Examina dados para compreender questões, tirar conclusões e resolver problemas.
-              </h4>
-              <StarRating rating={analiseRaciocinio} onRatingChange={setAnaliseRaciocinio} />
-            </div>
-          </>
-        )}
-        {comportamentaisVisivel && (
-          <>
-            <h2>Competências Comportamentais</h2>
-            <h3>Por favor, avalie o cumprimento destes requisitos em uma escala de 1 a 5, onde 1 representa um cumprimento insatisfatório e 5 representa um cumprimento excepcional.</h3>
-            <div>
-              <h4>
-                Responsabilidade e confiabilidade: Assume responsabilidade pessoal pela qualidade e pontualidade do trabalho e alcança resultados com pouca supervisão.
-              </h4>
+          {tecnicasVisivel && (
+            <>
+              <h2>Competências Técnicas</h2>
+              <h3>Por favor, avalie o cumprimento destes requisitos em uma escala de 1 a 5, onde 1 representa um cumprimento insatisfatório e 5 representa um cumprimento excepcional.</h3>
+              <div>
+                <h4>
+                  Solução de problemas: Examina dados para compreender questões, tirar conclusões e resolver problemas.
+                </h4>
+                <StarRating rating={solucaoProblemas} onRatingChange={setSolucaoProblemas} />
+                <h4>
+                  Atenção aos detalhes: Atende com diligência os detalhes e busca a qualidade na execução das tarefas.
+                </h4>
+                <StarRating rating={atencaoDetalhes} onRatingChange={setAtencaoDetalhes} />
+                <h4>
+                Análise/Raciocínio: Examina dados para compreender questões, tirar conclusões e resolver problemas.
+                </h4>
+                <StarRating rating={analiseRaciocinio} onRatingChange={setAnaliseRaciocinio} />
+              </div>
+            </>
+          )}
+          {comportamentaisVisivel && (
+            <>
+              <h2>Competências Comportamentais</h2>
+              <h3>Por favor, avalie o cumprimento destes requisitos em uma escala de 1 a 5, onde 1 representa um cumprimento insatisfatório e 5 representa um cumprimento excepcional.</h3>
+              <div>
+                <h4>
+                  Responsabilidade e confiabilidade: Assume responsabilidade pessoal pela qualidade e pontualidade do trabalho e alcança resultados com pouca supervisão.
+                </h4>
                 <StarRating rating={responsabilidadeConfiabilidade} onRatingChange={setResponsabilidadeConfiabilidade} />
-              <h4>
-                Adaptabilidade e Flexibilidade: Se adapta às necessidades, condições e responsabilidades do trabalho em constante mudança.
-              </h4>
+                <h4>
+                  Adaptabilidade e Flexibilidade: Se adapta às necessidades, condições e responsabilidades do trabalho em constante mudança.
+                </h4>
                 <StarRating rating={adaptabilidadeFlexibilidade} onRatingChange={setAdaptabilidadeFlexibilidade} />
-              <h4>
-                Trabalho em equipe: Promove a cooperação e o comprometimento dentro de uma equipe para atingir metas e resultados.
-              </h4>
-              <StarRating rating={trabalhoEquipe} onRatingChange={setTrabalhoEquipe} />
-            </div>
-          </>
-        )}
+                <h4>
+                  Trabalho em equipe: Promove a cooperação e o comprometimento dentro de uma equipe para atingir metas e resultados.
+                </h4>
+                <StarRating rating={trabalhoEquipe} onRatingChange={setTrabalhoEquipe} />
+              </div>
+            </>
+          )}
         </div>
-    
       </div>
     </div>
   );
