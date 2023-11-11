@@ -1,5 +1,5 @@
 import React from 'react';
-import './starRating.css';
+import "./starRating.css";
 
 function StarRating({ rating, onRatingChange }) {
 
